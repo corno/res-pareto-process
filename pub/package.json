@@ -1,0 +1,27 @@
+{
+  "author": "Corno",
+  "bugs": {
+    "url": "https://github.com/corno/pareto/issues"
+  },
+  "description": "",
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/corno/pareto#readme",
+  "license": "ISC",
+  "main": "./dist",
+  "types": "./dist",
+  "name": "res-pareto-process",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corno/rsi-pareto-process.git"
+  },
+  "dependencies": {
+    "api-pareto-process": "^0.1.0"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "@types/node": "^18.7.13"
+  },
+  "content-fingerprint": "a5a0ee21f59e558439adc1ac186da5e8bd9d464d"
+}
