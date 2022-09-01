@@ -17,11 +17,11 @@
     "url": "git+https://github.com/corno/rsi-pareto-process.git"
   },
   "dependencies": {
-    "api-pareto-process": "^0.1.1"
+    "api-pareto-process": "^0.1.2"
   },
   "version": "0.4.0",
   "devDependencies": {
     "@types/node": "^18.7.14"
   },
-  "content-fingerprint": "08419406bc02cbbb2e4a4329ea8c543ce7e94ca4"
+  "content-fingerprint": "91080ffd5bff32599141ab640867865a87fe287a"
 }
