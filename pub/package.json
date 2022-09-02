@@ -14,7 +14,7 @@
   "name": "res-pareto-process",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/corno/rsi-pareto-process.git"
+    "url": "git+https://github.com/corno/res-pareto-process.git"
   },
   "dependencies": {
     "api-pareto-process": "^0.1.2"
