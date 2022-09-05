@@ -17,11 +17,11 @@
     "url": "git+https://github.com/corno/res-pareto-process.git"
   },
   "dependencies": {
-    "api-pareto-process": "^0.1.2"
+    "api-pareto-process": "^0.2.0"
   },
   "version": "0.5.0",
   "devDependencies": {
-    "@types/node": "^18.7.14"
+    "@types/node": "^18.7.15"
   },
-  "content-fingerprint": "91080ffd5bff32599141ab640867865a87fe287a"
+  "content-fingerprint": "d6c40530399d0e74f0555688ad6b71c4dfba671c"
 }
