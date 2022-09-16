@@ -2,7 +2,7 @@
 import * as api from "api-pareto-process"
 import { exec } from "../private/exec"
 
-export const call: api.ACall = ($, $i) => {
+export const f_call: api.ACall = ($, $i) => {
     return {
         execute: (cb) => {
             exec(
