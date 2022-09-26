@@ -10,23 +10,21 @@ export const f_call: api.FCall = ($) => {
 
     return pi.wrapAsyncValueImp(
         true,
-        {
-            _execute: (cb) => {
-                exec(
-                    $,
-                    (err, stdout, stderr) => {
-                        if (err !== null) {
+        (cb) => {
+            exec(
+                $,
+                (err, stdout, stderr) => {
+                    if (err !== null) {
 
-                            cb(["error", {
-                                stderr: stderr,
-                                exitCode: err.code === undefined ? null : err.code
-                            }])
-                        } else {
-                            cb(["success", stdout])
-                        }
+                        cb(["error", {
+                            stderr: stderr,
+                            exitCode: err.code === undefined ? null : err.code
+                        }])
+                    } else {
+                        cb(["success", stdout])
                     }
-                )
-            }
-        }
+                }
+            )
+        },
     )
 }
