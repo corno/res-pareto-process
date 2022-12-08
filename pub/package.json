@@ -18,11 +18,11 @@
   },
   "dependencies": {
     "api-pareto-process": "^0.3.0",
-    "pareto-core-internals": "^0.9.0"
+    "pareto-core-internals": "^0.11.0"
   },
   "version": "0.8.0",
   "devDependencies": {
     "@types/node": "^18.11.9"
   },
-  "content-fingerprint": "e445d5490167b293e4f3be896664b04125d79581"
+  "content-fingerprint": "889abf3e0e577ae3b5ca66f9f2dceec8e41444be"
 }
