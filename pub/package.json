@@ -18,11 +18,12 @@
   },
   "dependencies": {
     "glo-pareto-common": "^0.7.0",
-    "pareto-core-internals": "^0.11.0"
+    "pareto-core-internals": "^0.11.0",
+    "pareto-core-types": "^0.10.0"
   },
   "version": "0.8.0",
   "devDependencies": {
-    "@types/node": "^18.11.9"
+    "@types/node": "^18.11.18"
   },
-  "content-fingerprint": "889abf3e0e577ae3b5ca66f9f2dceec8e41444be"
+  "content-fingerprint": "822dfe860bddf34b66719905ede2e41e62e05b9e"
 }
