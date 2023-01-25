@@ -1,12 +1,12 @@
 import * as pi from "pareto-core-internals"
 
 //import * as cp from "child_process"
-import * as api from "api-pareto-process"
+import * as api from "../api"
 
 
-import { exec } from "../private/exec.p"
+import { exec } from "../native/exec.native"
 
-export const f_call: api.FCall = ($) => {
+export const $$: api.Ccall = ($) => {
 
     return pi.wrapAsyncValueImp(
         true,
