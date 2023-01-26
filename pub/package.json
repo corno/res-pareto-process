@@ -17,7 +17,7 @@
     "url": "git+https://github.com/corno/res-pareto-process.git"
   },
   "dependencies": {
-    "glo-pareto-common": "^0.7.0",
+    "glo-pareto-common": "^0.8.0",
     "pareto-core-internals": "^0.11.0",
     "pareto-core-types": "^0.10.0"
   },
@@ -25,5 +25,5 @@
   "devDependencies": {
     "@types/node": "^18.11.18"
   },
-  "content-fingerprint": "63efd0a589cc8331d50b6bf6b7ee1cee0ba1661c"
+  "content-fingerprint": "d0bd0487a3c7e756dce7cb0ad46fd3070a4aa3c0"
 }
