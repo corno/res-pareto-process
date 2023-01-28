@@ -1,31 +1,23 @@
 import * as pr from 'pareto-core-raw'
 import {
-    externalReference as er,
-    string as str,
-    reference as ref,
-    boolean as bln,
-    number as nr,
+    string,
+    reference,
     nested,
-    optional,
     array,
     typeReference,
-    externalTypeReference,
     callback,
     interfaceReference,
     procedure,
     null_,
     method,
-    number,
+    number, dictionary, group, member, taggedUnion, types, _function, parameter, template,
 } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
-import { dictionary, group, member, taggedUnion, types, _function } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 
+import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
 
-import { definitionReference, externalDefinitionReference, constructor } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
 import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
 
 const d = pr.wrapRawDictionary
-const a = pr.wrapRawArray
-
 
 export const $: mmoduleDefinition.TModuleDefinition = {
     'glossary': {
@@ -33,21 +25,32 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             "common": "glo-pareto-common",
         }),
         'parameters': d({}),
-        'templates': d({}),
+        'templates': d({
+
+            "Optional": {
+                'parameters': d({ "Type": {}, }),
+                'type': taggedUnion({
+                    "set": parameter("Type"),
+                    "not set": group({}),
+                })
+            }
+        }),
         'types': types({
             "Error": group({
-                "stderr": member(str()),
-                "exitCode": member(optional(number())),
+                "stderr": member(string()),
+                "exitCode": member(template("Optional", {
+                    "Type": number()
+                })),
             }),
             "Result": taggedUnion({
-                "success": str(),
-                "error": ref("Error")
+                "success": string(),
+                "error": reference("Error")
             })
         }),
         'interfaces': d({
         }),
         'functions': d({
-            "Call": _function(externalTypeReference("common", "String"), typeReference("Result"), true),
+            "Call": _function(typeReference("common", "String"), typeReference("Result"), true),
         }),
     },
     'api': {
@@ -55,10 +58,7 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             "common": "glo-pareto-common",
         }),
         'algorithms': d({
-            "call": {
-                'definition': definitionReference("Call"),
-                'type': ['reference', null],
-            }
+            "call": algorithm(definitionReference("Call")),
         })
     },
 }
