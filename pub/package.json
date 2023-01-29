@@ -1,29 +1,24 @@
 {
-  "author": "Corno",
-  "bugs": {
-    "url": "https://github.com/corno/pareto/issues"
-  },
-  "description": "",
-  "files": [
-    "dist"
-  ],
-  "homepage": "https://github.com/corno/pareto#readme",
-  "license": "ISC",
-  "main": "./dist",
-  "types": "./dist",
   "name": "res-pareto-process",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/corno/res-pareto-process.git"
-  },
+  "author": "Corno",
+  "license": "ISC",
+  "description": "a pareto wrapper around the process library of NodeJS",
   "dependencies": {
-    "glo-pareto-common": "^0.9.0",
-    "pareto-core-internals": "^0.11.0",
-    "pareto-core-types": "^0.10.0"
+    "glo-pareto-common": "^0.10.0",
+    "pareto-core-internals": "^0.11.0"
   },
-  "version": "0.11.0",
   "devDependencies": {
     "@types/node": "^18.11.18"
   },
-  "content-fingerprint": "f8f5d46b8ca66cebf307a330f89b0b0544c61848"
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/corno/res-pareto-process.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "version": "0.0.0",
+  "content-fingerprint": "f071bda26e0bd1bcff2450e6b805197005decf18"
 }
