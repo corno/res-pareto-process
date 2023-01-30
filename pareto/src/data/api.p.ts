@@ -5,17 +5,15 @@ import {
     nested,
     array,
     typeReference,
-    callback,
     interfaceReference,
-    procedure,
     null_,
     method,
-    number, dictionary, group, member, taggedUnion, types, _function, parameter, template,
-} from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
+    number, dictionary, group, member, taggedUnion, types, parameter, template, func, data,
+} from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
-import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
+import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/submodules/moduleDefinition/shorthands.p"
 
-import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
+import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/submodules/moduleDefinition"
 
 const d = pr.wrapRawDictionary
 
@@ -50,7 +48,7 @@ export const $: mmoduleDefinition.TModuleDefinition = {
         'interfaces': d({
         }),
         'functions': d({
-            "Call": _function(typeReference("common", "String"), typeReference("Result"), true),
+            "Call": func(typeReference("common", "String"), null, null, data(typeReference("Result"), true)),
         }),
     },
     'api': {
