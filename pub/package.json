@@ -2,7 +2,6 @@
   "author": "Corno",
   "license": "ISC",
   "description": "a pareto wrapper around the process library of NodeJS",
-
   "dependencies": {
     "glo-pareto-common": "^0.11.0",
     "pareto-core-internals": "^0.11.0"
@@ -14,8 +13,12 @@
     "dist"
   ],
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "http://github.com/corno/res-pareto-process.git"
   },
   "main": "dist/index.js",
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "name": "res-pareto-process",
+  "version": "0.12.0",
+  "content-fingerprint": "3157cc39d74ca4ea048d528926677e2c27398495"
 }
