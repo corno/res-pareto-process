@@ -8,7 +8,7 @@ import {
     interfaceReference,
     null_,
     method,
-    number, dictionary, group, member, taggedUnion, types, parameter, template, func, data,
+    number, dictionary, group, member, taggedUnion, types, func, data, type, optional,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
 import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/submodules/moduleDefinition/shorthands.p"
@@ -17,33 +17,21 @@ import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/submodule
 
 const d = pr.wrapRawDictionary
 
-export const $: mmoduleDefinition.TModuleDefinition = {
+export const $: mmoduleDefinition.T.ModuleDefinition = {
     'glossary': {
         'imports': d({
             "common": "glo-pareto-common",
         }),
         'parameters': d({}),
-        'templates': d({
-
-            "Optional": {
-                'parameters': d({ "Type": {}, }),
-                'type': taggedUnion({
-                    "set": parameter("Type"),
-                    "not set": group({}),
-                })
-            }
-        }),
-        'types': types({
-            "Error": group({
+        'types': d({
+            "Error": type(group({
                 "stderr": member(string()),
-                "exitCode": member(template("Optional", {
-                    "Type": number()
-                })),
-            }),
-            "Result": taggedUnion({
+                "exitCode": member(optional(number())),
+            })),
+            "Result": type(taggedUnion({
                 "success": string(),
                 "error": reference("Error")
-            })
+            })),
         }),
         'interfaces': d({
         }),

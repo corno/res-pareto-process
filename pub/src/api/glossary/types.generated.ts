@@ -2,30 +2,33 @@ import * as pt from 'pareto-core-types'
 
 import * as mcommon from "glo-pareto-common"
 
-export namespace VOptional {
+export namespace T {
     
-    export namespace Onot__set {}
-    export type Onot__set<AType> = {}
-}
-export type VOptional<AType> = 
-    | ['not set', VOptional.Onot__set<AType>]
-    | ['set', AType]
-
-export type MOptional<AType> = VOptional<AType>
-
-export namespace GError {
+    export namespace Error {
+        
+        export namespace exitCode {
+            
+            export type O = number
+        }
+        
+        export type exitCode = [ false ] | [ true, number]
+        
+        export type stderr = string
+    }
     
-    export namespace PexitCode {}
-    export type PexitCode = MOptional<number>
+    export type Error = {
+        readonly 'exitCode': [ false ] | [ true, number]
+        readonly 'stderr': string
+    }
+    
+    export namespace Result {
+        
+        export type error = T.Error
+        
+        export type success = string
+    }
+    
+    export type Result = 
+        | ['error', T.Error]
+        | ['success', string]
 }
-export type GError = {
-    readonly 'exitCode': GError.PexitCode
-    readonly 'stderr': string
-}
-export type UError = GError
-
-export namespace GResult {}
-export type GResult = 
-    | ['error', UError]
-    | ['success', string]
-export type UResult = GResult

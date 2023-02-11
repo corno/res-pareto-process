@@ -18,7 +18,7 @@ export const $$: api.Ccall = ($) => {
 
                         cb(["error", {
                             stderr: stderr,
-                            exitCode: err.code === undefined ? ['not set', {}] : ['set', err.code]
+                            exitCode: err.code === undefined ? [false] : [true, err.code]
                         }])
                     } else {
                         cb(["success", stdout])
