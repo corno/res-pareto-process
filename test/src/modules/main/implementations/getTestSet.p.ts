@@ -1,6 +1,7 @@
 
 import * as pm from "pareto-core-state"
 import * as pl from "pareto-core-lib"
+import * as pv from "pareto-core-dev"
 
 import * as mtest from "lib-pareto-test"
 
@@ -15,12 +16,12 @@ export const $$: api.CgetTestSet = () => {
         switch ($[0]) {
             case 'error':
                 pl.cc($[1], ($) => {
-                    pl.logDebugMessage($.stderr)
+                    pv.logDebugMessage($.stderr)
                 })
                 break
             case 'success':
                 pl.cc($[1], ($) => {
-                    pl.logDebugMessage($)
+                    pv.logDebugMessage($)
                 })
                 break
             default: pl.au($[0])
