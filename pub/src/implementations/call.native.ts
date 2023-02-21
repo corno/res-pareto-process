@@ -9,7 +9,6 @@ import { exec } from "../native/exec.native"
 export const $$: api.Ccall = ($) => {
 
     return pi.wrapAsyncValueImp(
-        true,
         (cb) => {
             exec(
                 $,

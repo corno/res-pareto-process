@@ -12,7 +12,7 @@ import * as pub from "../../../../../pub/dist"
 
 export const $$: api.CgetTestSet = () => {
 
-    pub.$a.call("ls")._execute(($) => {
+    pub.$a.call("ls").__execute(($) => {
         switch ($[0]) {
             case 'error':
                 pl.cc($[1], ($) => {
