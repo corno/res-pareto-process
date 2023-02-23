@@ -2,9 +2,11 @@ import * as pi from 'pareto-core-internals'
 
 import * as ncp from "child_process"
 
-import * as mapi from "../api"
 
-export const $$: mapi.Ccall = ($) => {
+
+import { Ccall } from "../api"
+
+export const $$:Ccall = ($) => {
 
     return pi.wrapAsyncValueImp(
         (cb) => {
