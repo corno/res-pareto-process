@@ -1,18 +1,16 @@
 
-import * as pm from "pareto-core-state"
-import * as pl from "pareto-core-lib"
-import * as pv from "pareto-core-dev"
+import * as ps from 'pareto-core-state'
+import * as pl from 'pareto-core-lib'
+import * as pv from 'pareto-core-dev'
+import * as pa from 'pareto-core-async'
 
 import * as mtest from "lib-pareto-test"
+import * as mapi from "../api"
+import * as mpub from "../../../../../pub/dist"
 
-import * as api from "../api"
+export const $$: mapi.CgetTestSet = () => {
 
-
-import * as pub from "../../../../../pub/dist"
-
-export const $$: api.CgetTestSet = () => {
-
-    pub.$a.call("ls").__execute(($) => {
+    mpub.$a.call("ls").__execute(($) => {
         switch ($[0]) {
             case 'error':
                 pl.cc($[1], ($) => {
@@ -28,11 +26,11 @@ export const $$: api.CgetTestSet = () => {
         }
     })
 
-    const builder = pm.createUnsafeDictionaryBuilder<mtest.T.TestElement>()
+    const builder = ps.createUnsafeDictionaryBuilder<mtest.T.TestElement>()
     function createTest(name: string, actual: string, expected: string) {
         builder.add(name, {
-            type: ["test", {
-                type: ["short string", {
+            'type': ['test', {
+                type: ['short string', {
                     actual: actual,
                     expected: expected
                 }]
@@ -40,7 +38,7 @@ export const $$: api.CgetTestSet = () => {
         })
     }
 
-    return pl.asyncValue({
+    return pa.asyncValue({
         elements: builder.getDictionary()
     })
 }
