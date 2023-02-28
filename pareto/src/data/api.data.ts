@@ -1,50 +1,16 @@
 import * as pd from 'pareto-core-data'
-import {
-    string,
-    reference,
-    nested,
-    array,
-    typeReference,
-    interfaceReference,
-    null_,
-    method,
-    number, dictionary, group, member, taggedUnion, types, func, data, type, optional,
-} from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
-import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/submodules/moduleDefinition/shorthands"
+import { functionReference, constructor, algorithm, typeReference } from "lib-pareto-typescript-project/dist/submodules/api/shorthands"
 
-import * as gmoduleDefinition from "lib-pareto-typescript-project/dist/submodules/moduleDefinition"
-
+import * as gapi from "lib-pareto-typescript-project/dist/submodules/api"
 const d = pd.d
 
-export const $: gmoduleDefinition.T.ModuleDefinition<pd.SourceLocation> = {
-    'glossary': {
-        'imports': d({
-            "common": "glo-pareto-common",
-        }),
-        'parameters': d({}),
-        'types': d({
-            "Error": type(group({
-                "stderr": member(string()),
-                "exitCode": member(optional(number())),
-            })),
-            "Result": type(taggedUnion({
-                "success": string(),
-                "error": reference("Error")
-            })),
-        }),
-        'interfaces': d({
-        }),
-        'functions': d({
-            "Call": func(typeReference("common", "String"), null, null, data(typeReference("Result"), true)),
-        }),
-    },
-    'api': {
-        'imports': d({
-            "common": "glo-pareto-common",
-        }),
-        'algorithms': d({
-            "call": algorithm(definitionReference("Call")),
-        })
-    },
+export const $: gapi.T.API<pd.SourceLocation> = {
+    'imports': d({
+        "common": "glo-pareto-common",
+        "this": "./glossary",
+    }),
+    'algorithms': d({
+        "call": algorithm(functionReference("this", {}, "Call")),
+    })
 }
