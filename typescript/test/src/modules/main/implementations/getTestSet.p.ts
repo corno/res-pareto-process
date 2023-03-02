@@ -12,7 +12,7 @@ import { CgetTestSet } from "../definition/api.generated"
 
 export const $$:CgetTestSet = () => {
 
-    gpub.$a.call("ls").__execute(($) => {
+    gpub.$r.call("ls").__execute(($) => {
         switch ($[0]) {
             case 'error':
                 pl.cc($[1], ($) => {
