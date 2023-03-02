@@ -4,7 +4,7 @@ import * as ncp from "child_process"
 
 
 
-import { Ccall } from "../api"
+import { Ccall } from "../definition/api.generated"
 
 export const $$:Ccall = ($) => {
 
