@@ -30,6 +30,8 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> =  {
             "error": reference("Error")
         })),
     }),
+    'builders': d({
+    }),
     'interfaces': d({
     }),
     'functions': d({

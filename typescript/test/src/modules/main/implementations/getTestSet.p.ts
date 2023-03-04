@@ -8,9 +8,9 @@ import * as gtest from "lib-pareto-test"
 
 import * as gpub from "../../../../../pub/dist"
 
-import { CgetTestSet } from "../definition/api.generated"
+import { getTestSet } from "../definition/api.generated"
 
-export const $$:CgetTestSet = () => {
+export const $$: getTestSet = () => {
 
     gpub.$r.call("ls").__execute(($) => {
         switch ($[0]) {

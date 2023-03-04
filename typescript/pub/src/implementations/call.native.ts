@@ -4,9 +4,9 @@ import * as ncp from "child_process"
 
 
 
-import { Ccall } from "../definition/api.generated"
+import { call } from "../definition/api.generated"
 
-export const $$:Ccall = ($) => {
+export const $$: call = ($) => {
 
     return pi.wrapAsyncValueImp(
         (cb) => {
