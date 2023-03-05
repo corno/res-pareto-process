@@ -27,7 +27,7 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> =  {
         })),
         "Result": type(taggedUnion({
             "success": string(),
-            "error": reference("Error")
+            "error": reference("Error"),
         })),
     }),
     'builders': d({
