@@ -1,4 +1,4 @@
-import { API } from "./definition/api.generated"
+import { API } from "./api.generated"
 import { $$ as icall } from "./implementations/call.native"
 
 export const $r: API = {

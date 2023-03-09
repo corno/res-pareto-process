@@ -8,7 +8,7 @@ import * as gtest from "lib-pareto-test"
 
 import * as gpub from "../../../../../pub/dist"
 
-import { getTestSet } from "../definition/api.generated"
+import { getTestSet } from "../api.generated"
 
 export const $$: getTestSet = () => {
 

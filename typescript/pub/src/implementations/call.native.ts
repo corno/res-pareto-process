@@ -4,7 +4,7 @@ import * as ncp from "child_process"
 
 
 
-import { call } from "../definition/api.generated"
+import { call } from "../api.generated"
 
 export const $$: call = ($) => {
 
