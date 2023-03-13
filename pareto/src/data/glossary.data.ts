@@ -7,19 +7,24 @@ import {
     dictionary, member, taggedUnion, types, group,
     array,
     typeReference,
-    data,
-    func,
+    adata,
+    afunc,
     type,
     optional,
-    reference,
     number,
+    externalTypeReference,
+    imp,
+    ref,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
-import * as gglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
+import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 const d = pd.d
 
-export const $: gglossary.T.Glossary<pd.SourceLocation> =  {
+export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({}),
+    'imports': d({
+        "common": imp({}),
+    }),
     'types': d({
         "Error": type(group({
             "stderr": member(string()),
@@ -27,14 +32,14 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> =  {
         })),
         "Result": type(taggedUnion({
             "success": string(),
-            "error": reference("Error"),
+            "error": ref(typeReference("Error")),
         })),
     }),
-    'builders': d({
-    }),
-    'interfaces': d({
-    }),
-    'functions': d({
-        "Call": func(typeReference("common", "String"), null, null, data(typeReference("Result"), true)),
-    }),
+    'type': ['asynchronous', {
+        'interfaces': d({
+        }),
+        'functions': d({
+            "Call": afunc(externalTypeReference("common", "String"), null, adata(typeReference("Result"))),
+        }),
+    }],
 }
