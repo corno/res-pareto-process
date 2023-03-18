@@ -1,20 +1,16 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    string,
-    null_,
-    nested,
-    dictionary, member, taggedUnion, types, group,
-    array,
+    string, member, taggedUnion, group,
     typeReference,
-    adata,
-    afunc,
+    data,
     type,
     optional,
     number,
     externalTypeReference,
     imp,
     ref,
+    afunction,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -35,11 +31,16 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "error": ref(typeReference("Error")),
         })),
     }),
-    'type': ['asynchronous', {
-        'interfaces': d({
-        }),
+    'asynchronous': {
+        'interfaces': d({}),
+        'constructors': d({}),
         'functions': d({
-            "Call": afunc(externalTypeReference("common", "String"), null, adata(typeReference("Result"))),
+            "Call": afunction(data(externalTypeReference("common", "String")), typeReference("Result")),
         }),
-    }],
+    },
+    'synchronous': {
+        'interfaces': d({}),
+        'constructors': d({}),
+        'functions': d({}),
+    },
 }
