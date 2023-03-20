@@ -9,5 +9,5 @@ export namespace A {
 }
 
 export type API = {
-    call: A.call
+    readonly 'call': A.call
 }
