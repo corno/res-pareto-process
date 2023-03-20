@@ -5,7 +5,7 @@ import * as g_this from "./glossary"
 
 export namespace A {
     
-    export type call = g_this.ASYNC.A.F.Call
+    export type call = () => g_this.ASYNC.A.F.Call
 }
 
 export type API = {

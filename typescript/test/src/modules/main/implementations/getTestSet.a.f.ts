@@ -12,7 +12,7 @@ import { getTestSet } from "../api.generated"
 
 export const $$: getTestSet = () => {
     pl.processAsyncValue(
-        g_pub.$r.call("ls"),
+        g_pub.$r.call()("ls"),
         ($) => {
             switch ($[0]) {
                 case 'error':
