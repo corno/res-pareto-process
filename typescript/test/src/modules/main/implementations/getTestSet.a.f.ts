@@ -8,9 +8,9 @@ import * as g_test from "lib-pareto-test"
 
 import * as g_pub from "../../../../../pub/dist"
 
-import { getTestSet } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$: getTestSet = () => {
+export const $$: A.getTestSet = () => {
     pl.processAsyncValue(
         g_pub.$r.call()("ls"),
         ($) => {
