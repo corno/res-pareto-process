@@ -34,7 +34,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'asynchronous': {
         'interfaces': d({}),
         'algorithms': d({
-            "Call": afunction(typeReference("Result"), data(externalTypeReference("common", "String"))),
+            "Call": afunction(typeReference("Result"), externalTypeReference("common", "String")),
         }),
     },
     'synchronous': {
