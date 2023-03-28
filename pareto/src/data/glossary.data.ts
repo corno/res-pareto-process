@@ -21,16 +21,19 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'imports': d({
         "common": imp({}),
     }),
-    'types': d({
-        "Error": type(group({
-            "stderr": member(string()),
-            "exitCode": member(optional(number())),
-        })),
-        "Result": type(taggedUnion({
-            "success": string(),
-            "error": ref(typeReference("Error")),
-        })),
-    }),
+    'root': {
+        'namespaces': d({}),
+        'types': d({
+            "Error": type(group({
+                "stderr": member(string()),
+                "exitCode": member(optional(number())),
+            })),
+            "Result": type(taggedUnion({
+                "success": string(),
+                "error": ref(typeReference("Error")),
+            })),
+        }),
+    },
     'asynchronous': {
         'interfaces': d({}),
         'algorithms': d({
@@ -40,6 +43,6 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'synchronous': {
         'interfaces': d({}),
         'algorithms': d({}),
-        
+
     },
 }
